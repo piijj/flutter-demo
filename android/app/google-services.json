@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "53939144083",
+    "project_id": "aphex-dev",
+    "storage_bucket": "aphex-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53939144083:android:606083ec46950573bcd466",
+        "android_client_info": {
+          "package_name": "com.example.field_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53939144083-ioln45l5osbsj6n3115n1lqvbefp4e2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADdhMfd519Am27hfnblt111YrWK4SMz7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53939144083-ioln45l5osbsj6n3115n1lqvbefp4e2f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "53939144083-n233kocqb3gtfqruh1lsut2p5s6dtggd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aphex.field"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
