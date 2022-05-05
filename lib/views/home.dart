@@ -28,6 +28,8 @@ class HomeState extends State<Home> {
   bool showSaveButton = false;
   bool isLoading = false;
 
+  int _selectedIndex = 0;
+
   @override
   void initState() {
     user = FirebaseAuth.instance.currentUser!;
@@ -43,6 +45,12 @@ class HomeState extends State<Home> {
     log(user.toString());
 
     super.initState();
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
@@ -84,26 +92,34 @@ class HomeState extends State<Home> {
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: FaIcon(FontAwesomeIcons.listCheck),
-                label: 'My Tasks',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.map),
-                label: 'Maps',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.notifications),
-                label: 'Notifications',
-              ),
-            ],
-          )),
+              type: BottomNavigationBarType.fixed,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: FaIcon(FontAwesomeIcons.listCheck),
+                  label: 'My Tasks',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.map),
+                  label: 'Maps',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.notifications),
+                  label: 'Notifications',
+                ),
+              ],
+              currentIndex: _selectedIndex,
+              backgroundColor: Colors.white,
+              selectedItemColor: const Color.fromRGBO(18, 120, 236, 1),
+              unselectedItemColor: const Color.fromRGBO(102, 112, 148, 1),
+              selectedFontSize: 12,
+              unselectedFontSize: 12,
+              showUnselectedLabels: true,
+              iconSize: 14,
+              onTap: _onItemTapped)),
     );
   }
 }
