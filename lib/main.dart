@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Field Flutter',
-      theme: ThemeData(fontFamily: 'Overpass'),
+      theme: ThemeData(
+          fontFamily: 'Overpass', scaffoldBackgroundColor: Colors.white),
       home: Scaffold(
         body: LayoutBuilder(
           builder: (context, constraines) {

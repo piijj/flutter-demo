@@ -67,6 +67,7 @@ flutter:
     #svg
     - assets/svg/field_workmark.svg
     - assets/svg/four_hands.svg
+    - assets/svg/user_no_project.svg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
