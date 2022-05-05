@@ -95,7 +95,7 @@ class HomeState extends State<Home> {
               type: BottomNavigationBarType.fixed,
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: FaIcon(FontAwesomeIcons.house),
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
@@ -103,11 +103,11 @@ class HomeState extends State<Home> {
                   label: 'My Tasks',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.map),
+                  icon: FaIcon(FontAwesomeIcons.map),
                   label: 'Maps',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.notifications),
+                  icon: FaIcon(FontAwesomeIcons.bell),
                   label: 'Notifications',
                 ),
               ],
