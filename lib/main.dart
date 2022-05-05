@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Field Flutter',
-      theme: ThemeData(primarySwatch: Colors.amber),
+      theme: ThemeData(fontFamily: 'Overpass'),
       home: Scaffold(
         body: LayoutBuilder(
           builder: (context, constraines) {
@@ -64,17 +64,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Field Flutter',
-//       routes: AppRoutes.define(),
-//       home: Login(),
-//     );
-//   }
-// }

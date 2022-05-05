@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:field_flutter/services/AuthService.dart';
+import 'package:field_flutter/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
