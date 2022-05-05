@@ -6,18 +6,16 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         body: Padding(
-          padding:
-              // const EdgeInsets.only(top: 72, bottom: 52, left: 16, right: 16),
-              const EdgeInsets.symmetric(horizontal: 16, vertical: 52),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 52),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SvgPicture.asset('assets/svg/field_workmark.svg',
-                  width: 225, height: 36, semanticsLabel: 'Acme Logo'),
+                  width: 225, height: 36, semanticsLabel: 'Aphex Field Logo'),
               const SizedBox(height: 72),
               SvgPicture.asset('assets/svg/four_hands.svg',
-                  width: 175, height: 135, semanticsLabel: 'Acme Logo'),
+                  width: 175, height: 135, semanticsLabel: 'Welcome'),
               const SizedBox(height: 48),
               const Text(
                 'Bring everyone into the plan',
