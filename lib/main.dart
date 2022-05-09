@@ -1,5 +1,7 @@
 import 'package:field_flutter/views/home.dart';
 import 'package:field_flutter/views/login_screen.dart';
+import 'package:field_flutter/views/maps.dart';
+import 'package:field_flutter/views/my_tasks.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +19,8 @@ class MyApp extends StatelessWidget {
       title: 'Field Flutter',
       theme: ThemeData(
           fontFamily: 'Overpass', scaffoldBackgroundColor: Colors.white),
+      initialRoute: '/',
+      routes: {'/tasks': (context) => MyTasks(), '/maps': (context) => Maps()},
       home: Scaffold(
         body: LayoutBuilder(
           builder: (context, constraines) {

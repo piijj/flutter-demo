@@ -4,7 +4,8 @@ import 'package:field_flutter/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'bottom_menu.dart';
 
 /// Displayed as a profile image if the user doesn't have one.
 const placeholderImage =
@@ -24,7 +25,6 @@ class HomeState extends State<Home> {
   late User user;
 
   String? photoURL;
-  int _selectedIndex = 0;
 
   @override
   void initState() {
@@ -41,13 +41,6 @@ class HomeState extends State<Home> {
     log(user.toString());
 
     super.initState();
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      debugPrint('$index');
-      _selectedIndex = index;
-    });
   }
 
   @override
@@ -70,35 +63,7 @@ class HomeState extends State<Home> {
               ),
             )
           ]),
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.house),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.listCheck),
-              label: 'My Tasks',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.map),
-              label: 'Maps',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.bell),
-              label: 'Notifications',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          backgroundColor: Colors.white,
-          selectedItemColor: const Color.fromRGBO(18, 120, 236, 1),
-          unselectedItemColor: const Color.fromRGBO(102, 112, 148, 1),
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
-          showUnselectedLabels: true,
-          iconSize: 14,
-          onTap: _onItemTapped),
+      bottomNavigationBar: BottomMenu(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 68),
         child: Column(
