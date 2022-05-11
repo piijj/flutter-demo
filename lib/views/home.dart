@@ -24,6 +24,7 @@ class HomeState extends State<Home> {
 
   String? photoURL;
 
+// TODO: save user to redux
   @override
   void initState() {
     user = FirebaseAuth.instance.currentUser!;

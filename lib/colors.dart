@@ -8,4 +8,7 @@ class AppColors {
   static const Color primaryPressed = Color.fromRGBO(18, 120, 236, 1);
   static const Color primary = Color.fromRGBO(33, 150, 243, 1);
   static const Color disabled = Color.fromRGBO(206, 207, 219, 1);
+
+  static const Color lightGrey = Color.fromRGBO(249, 249, 249, 1);
+  static const Color borderLight = Color.fromRGBO(230, 231, 237, 1);
 }
