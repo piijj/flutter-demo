@@ -1,11 +1,8 @@
-import 'dart:developer';
-
 import 'package:field_flutter/services/auth_service.dart';
+import 'package:field_flutter/views/bottom_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import 'bottom_menu.dart';
 
 /// Displayed as a profile image if the user doesn't have one.
 const placeholderImage =
@@ -38,7 +35,7 @@ class HomeState extends State<Home> {
       }
     });
 
-    log(user.toString());
+    debugPrint(user.toString());
 
     super.initState();
   }
@@ -63,7 +60,7 @@ class HomeState extends State<Home> {
               ),
             )
           ]),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 68),
         child: Column(
