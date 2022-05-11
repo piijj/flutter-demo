@@ -1,3 +1,4 @@
+import 'package:field_flutter/colors.dart';
 import 'package:field_flutter/services/auth_service.dart';
 import 'package:field_flutter/views/bottom_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -67,17 +68,18 @@ class HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset('assets/svg/user_no_project.svg',
+            SvgPicture.asset('assets/svg/binoculars.svg',
                 width: 130, height: 145, semanticsLabel: 'No Projects'),
             const SizedBox(height: 24),
             const Text(
               'You haven’t been added to a project yet!',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontFamily: 'Overpass',
-                  fontSize: 18,
-                  fontWeight: FontWeight.w800,
-                  color: Color.fromRGBO(8, 16, 77, 1)),
+                fontFamily: 'Overpass',
+                fontSize: 18,
+                fontWeight: FontWeight.w800,
+                color: AppColors.title,
+              ),
             ),
             const SizedBox(height: 12),
             const Padding(
@@ -89,7 +91,7 @@ class HomeState extends State<Home> {
                   fontFamily: 'Overpass',
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: Color.fromRGBO(57, 64, 113, 1),
+                  color: AppColors.defaultColor,
                 ),
               ),
             ),

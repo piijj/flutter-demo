@@ -1,4 +1,5 @@
 import 'package:field_flutter/actions/menu_action.dart';
+import 'package:field_flutter/colors.dart';
 import 'package:field_flutter/models/models.dart';
 import 'package:field_flutter/selectors/app_selectors.dart';
 import 'package:flutter/material.dart';
@@ -36,8 +37,8 @@ class BottomMenu extends HookWidget {
       ],
       currentIndex: activeTabIndex,
       backgroundColor: Colors.white,
-      selectedItemColor: const Color.fromRGBO(18, 120, 236, 1),
-      unselectedItemColor: const Color.fromRGBO(102, 112, 148, 1),
+      selectedItemColor: AppColors.primaryPressed,
+      unselectedItemColor: AppColors.label,
       selectedFontSize: 12,
       unselectedFontSize: 12,
       showUnselectedLabels: true,

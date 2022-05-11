@@ -43,7 +43,6 @@ class MyApp extends HookWidget {
                 child: StreamBuilder<User?>(
                   stream: FirebaseAuth.instance.authStateChanges(),
                   builder: (context, snapshot) {
-                    debugPrint(snapshot.hasData ? 'hello' : 'hi');
                     if (snapshot.hasData) {
                       return const LoggedInScreens();
                     }
