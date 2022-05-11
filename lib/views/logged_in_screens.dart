@@ -15,7 +15,11 @@ class LoggedInScreens extends HookWidget {
     final activeTabIndex =
         useSelector<AppState, int>((state) => activeTabSelector(state));
     return Scaffold(
-      body: IndexedStack(
+        body: AnimatedSwitcher(
+      transitionBuilder: AnimatedSwitcher.defaultTransitionBuilder,
+      duration: const Duration(milliseconds: 800),
+      child: IndexedStack(
+        key: ValueKey<int>(activeTabIndex),
         index: activeTabIndex,
         children: const [
           Home(), // Replace these widgets with your widgets
@@ -24,6 +28,6 @@ class LoggedInScreens extends HookWidget {
           Home(),
         ],
       ),
-    );
+    ));
   }
 }
