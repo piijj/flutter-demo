@@ -3,3 +3,9 @@ class SwitchActiveTab {
 
   SwitchActiveTab({required this.activeTab});
 }
+
+class SwitchMyTaskTab {
+  final int myTaskTab;
+
+  SwitchMyTaskTab({required this.myTaskTab});
+}

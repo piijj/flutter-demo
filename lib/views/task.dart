@@ -6,8 +6,8 @@ import 'package:flutter_redux_hooks/flutter_redux_hooks.dart';
 
 import '../models/app_state.dart';
 
-class MyTasks extends HookWidget {
-  const MyTasks({Key? key}) : super(key: key);
+class Task extends HookWidget {
+  const Task({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +17,10 @@ class MyTasks extends HookWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 52),
           child: Column(
             children: [
-              const Text('my tasks'),
-              TextButton(
-                onPressed: () => dispatch(SwitchMyTaskTab(myTaskTab: 1)),
-                child: const Text('Task'),
-              )
+              BackButton(
+                onPressed: () => dispatch(SwitchMyTaskTab(myTaskTab: 0)),
+              ),
+              const Text('my single task')
             ],
           )),
       bottomNavigationBar: const BottomMenu(),
