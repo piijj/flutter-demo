@@ -1,10 +1,9 @@
-import 'dart:developer';
-
+import 'package:field_flutter/colors.dart';
 import 'package:field_flutter/services/auth_service.dart';
+import 'package:field_flutter/views/bottom_menu.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// Displayed as a profile image if the user doesn't have one.
 const placeholderImage =
@@ -24,8 +23,8 @@ class HomeState extends State<Home> {
   late User user;
 
   String? photoURL;
-  int _selectedIndex = 0;
 
+// TODO: save user to redux
   @override
   void initState() {
     user = FirebaseAuth.instance.currentUser!;
@@ -38,16 +37,9 @@ class HomeState extends State<Home> {
       }
     });
 
-    log(user.toString());
+    debugPrint(user.toString());
 
     super.initState();
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      debugPrint('$index');
-      _selectedIndex = index;
-    });
   }
 
   @override
@@ -70,52 +62,25 @@ class HomeState extends State<Home> {
               ),
             )
           ]),
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.house),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.listCheck),
-              label: 'My Tasks',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.map),
-              label: 'Maps',
-            ),
-            BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.bell),
-              label: 'Notifications',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          backgroundColor: Colors.white,
-          selectedItemColor: const Color.fromRGBO(18, 120, 236, 1),
-          unselectedItemColor: const Color.fromRGBO(102, 112, 148, 1),
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
-          showUnselectedLabels: true,
-          iconSize: 14,
-          onTap: _onItemTapped),
+      bottomNavigationBar: const BottomMenu(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 68),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset('assets/svg/user_no_project.svg',
+            SvgPicture.asset('assets/svg/binoculars.svg',
                 width: 130, height: 145, semanticsLabel: 'No Projects'),
             const SizedBox(height: 24),
             const Text(
               'You haven’t been added to a project yet!',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontFamily: 'Overpass',
-                  fontSize: 18,
-                  fontWeight: FontWeight.w800,
-                  color: Color.fromRGBO(8, 16, 77, 1)),
+                fontFamily: 'Overpass',
+                fontSize: 18,
+                fontWeight: FontWeight.w800,
+                color: AppColors.title,
+              ),
             ),
             const SizedBox(height: 12),
             const Padding(
@@ -127,7 +92,7 @@ class HomeState extends State<Home> {
                   fontFamily: 'Overpass',
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: Color.fromRGBO(57, 64, 113, 1),
+                  color: AppColors.defaultColor,
                 ),
               ),
             ),
